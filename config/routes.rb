@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'pages/cheer_up' => 'pages#cheer_up'
 
   resources :stories
