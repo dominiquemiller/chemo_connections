@@ -2,12 +2,16 @@ Rails.application.routes.draw do
   devise_for :users
   get 'pages/cheer_up' => 'pages#cheer_up'
 
-  resources :stories
+  resources :stories do
+    resources :reviews
+  end
   resources :events
   get 'pages/home' => 'pages#home'
   get 'pages/about' => 'pages#about'
 
-  resources :photos
+  resources :photos do
+    resources :comments
+  end
 
   root 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.

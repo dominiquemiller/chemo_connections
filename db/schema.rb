@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151030232607) do
+ActiveRecord::Schema.define(version: 20151031150121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "commenter"
+    t.text     "body"
+    t.integer  "photo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["photo_id"], name: "index_comments_on_photo_id", using: :btree
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -34,6 +44,16 @@ ActiveRecord::Schema.define(version: 20151030232607) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string   "reviewer"
+    t.text     "body"
+    t.integer  "story_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "reviews", ["story_id"], name: "index_reviews_on_story_id", using: :btree
 
   create_table "stories", force: :cascade do |t|
     t.string   "title"
@@ -60,4 +80,6 @@ ActiveRecord::Schema.define(version: 20151030232607) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "comments", "photos"
+  add_foreign_key "reviews", "stories"
 end
