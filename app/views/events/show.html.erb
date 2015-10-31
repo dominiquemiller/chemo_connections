@@ -30,5 +30,10 @@
   <%= @event.zipcode %>
 </p>
 
+<div class="col-md-6">
+    <% my_request = "https://www.google.com/maps/embed/v1/place?key=AIzaSyAIAW3z8RyJAAq5KFcziTTMSk9fh42xyRc&q=#{@event.address}#{@event.city},#{@event.state}#{@event.zipcode}" %>
+          <%= content_tag(:iframe, '', src: my_request, width: 560, height: 315, frameborder: 1) %>
+  </div>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
