@@ -68,3 +68,12 @@
             Friends, families and co-workers form fundraising teams, and consumers help
             by donating at retail outlets. These efforts culminate in inspirational evening
             walks in nearly 200 communities across North America each fall."}])
+
+          event1 = Event.create([{name: "Light the Night", address: "301 North Biscayne Blvd", city: "Miami", state: "FL", zipcode:"33132", description:
+            "The Leukemia & Lymphoma Society's Light The Night Walk funds treatments
+            that are saving the lives of patients today. LLS is making cures happen by
+            providing patient support services, advocacy for lifesaving treatments and
+            the most promising cancer research anywhere. And it's all happening now.
+            Not someday, but today. Friends, families and co-workers form fundraising
+            teams, and consumers help by donating at retail outlets. These efforts culminate
+            in inspirational evening walks in nearly 200 communities across North America each fall."}])
