@@ -1,41 +1,53 @@
-<%= form_for(@event) do |f| %>
-  <% if @event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<div class="container">
+  <div class="col-md-4">
+  </div>
+    <div class="col-md-4">
+      <%= form_for(@event) do |f| %>
+        <% if @event.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-      <ul>
-      <% @event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+            <ul>
+            <% @event.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <h4><%= f.label :name %></h4><br>
+          <%= f.text_field :name %>
+        </div>
+        <div class="field">
+          <h4><%= f.label :date %></h4><br>
+          <%= f.text_field :date %>
+        </div>
+        <div class="field">
+          <h4><%= f.label :description %></h4><br>
+          <%= f.text_area :description %>
+        </div>
+        <div class="field">
+          <h4><%= f.label :address %></h4><br>
+          <%= f.text_field :address %>
+        </div>
+        <div class="field">
+          <h4><%= f.label :city %></h4><br>
+          <%= f.text_field :city %>
+        </div>
+        <div class="field">
+          <h4><%= f.label :state %></h4><br>
+          <%= f.text_field :state %>
+        </div>
+        <div class="field">
+          <h4><%= f.label :zipcode %></h4><br>
+          <%= f.number_field :zipcode %>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+      </div>
+    <div class="col-md-4">
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :zipcode %><br>
-    <%= f.number_field :zipcode %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

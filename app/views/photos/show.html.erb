@@ -1,20 +1,33 @@
+<div class="container">
+  <div class="page-header">
+    <h1 class="text-center"><%= @photo.title %><h1>
+  </div>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @photo.title %>
-</p>
+<div class="container">
+ <div class="row">
+  <div class="col-md-4">
+    <p>
+      <strong>Description:</strong>
+      <%= @photo.description %>
+    </p>
+  </div>
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-6">
+    <p>
+      <%= image_tag(@photo.picture_url, :width => 600) if @photo.picture.present? %>
+    </p>
+  </div>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @photo.description %>
-</p>
-
-<p>
-  <strong>Picture:</strong>
-  <%= image_tag(@photo.picture_url, :width => 600) if @photo.picture.present? %>
-</p>
-
-<h2>Comments</h2>
+<div class="container">
+  <div class="page-header">
+    <h2 class="text-center">Comments</h2>
+  </div>
+</div>
+<div class="container text-center">
 <% @photo.comments.each do |comment| %>
   <p>
     <strong>Commenter:</strong>
@@ -26,24 +39,28 @@
     <%= comment.body %>
   </p>
 <% end %>
+</div>
+
+<div class="container">
+  <div class="col-nd-4">
+    <h2>Add a comment:</h2>
+    <%= form_for([@photo, @photo.comments.build]) do |f| %>
+      <p>
+        <h4><%= f.label :commenter %></h4><br>
+        <%= f.text_field :commenter %>
+      </p>
+      <p>
+        <h4><%= f.label :body %></h4><br>
+        <%= f.text_area :body %>
+      </p>
+      <p>
+        <%= f.submit %>
+      </p>
+    <% end %>
+  </div>
+</div>
 
 
-<h2>Add a comment:</h2>
-<%= form_for([@photo, @photo.comments.build]) do |f| %>
-  <p>
-    <%= f.label :commenter %><br>
-    <%= f.text_field :commenter %>
-  </p>
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
 
-
-
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Back', photos_path %>
+<h4><%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %></h4>

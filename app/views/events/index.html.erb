@@ -1,10 +1,14 @@
 
+<div class="row">
+  <h1 class="text-center">Listing Events</h1>
+</div>
 
-<h1>Listing Events</h1>
+<h4><%= link_to 'New Event', new_event_path %></h4>
 
 <table class="table table-hover">
   <thead>
     <tr>
+      <th>Date</th>
       <th>Name</th>
       <th>Description</th>
       <th>Address</th>
@@ -18,6 +22,7 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
+        <td><%= event.date %></td>
         <td><%= event.name %></td>
         <td><%= event.description %></td>
         <td><%= event.address %></td>
@@ -33,5 +38,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Event', new_event_path %>
