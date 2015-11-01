@@ -11,6 +11,7 @@
 <body>
 
 <% if user_signed_in? %>
+
   Logged in as <strong><%= current_user.email %></strong>.
   <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
   <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
@@ -19,9 +20,27 @@
   <a href="/events">Events</a>
   <a href="/pages/cheer_up">Cheer Up!</a>
   <a href="/pages/about">About Us</a>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      Logged in as <strong><%= current_user.email %></strong>.
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      <button type="button" class="btn btn-default navbar-btn"><a href="/photos">Photos</a></button>
+      <button type="button" class="btn btn-default navbar-btn"><a href="/stories">Stories</a></button>
+      <button type="button" class="btn btn-default navbar-btn"><a href="/events">Events</a></button>
+      <button type="button" class="btn btn-default navbar-btn"><a href="/pages/cheer_up">Cheer Up!</a></button>
+      <button type="button" class="btn btn-default navbar-btn"><a href="/pages/about">About Us</a></button>
+
+    </div>
+  </div>
+</nav>
+
+
 <% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+  <!-- <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %> -->
 <% end %>
 
   <% if notice %>
