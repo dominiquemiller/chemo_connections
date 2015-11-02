@@ -13,3 +13,56 @@
  *= require_tree .
  *= require_self
  */
+
+
+.footer {
+  font-family: 'Oxygen', sans-serif;
+  /*position: absolute;*/
+  bottom: 0;
+  /*width: 100%;*/
+  /* Set the fixed height of the footer here */
+  /*height: 200px;*/
+  background-color: #55a5ee;
+  color: #efefef;
+  /*padding: 30px 0;*/
+}
+.footer a {
+  color: #FFDE17;
+}
+.footer a:hover {
+  color: #c8d8c8;
+}
+
+.navbar {
+  background-color:#55a5ee;
+  height: 70px;
+}
+.navbar a {
+  color: #cbe5e3;
+  font-size: 2em;
+  background-color: #55a5ee;
+}
+.navbar-toggle .icon-bar {
+  background-color: #d8e6f3;
+}
+
+@media only screen and (max-width: 750px) {
+  .dropdown-menu>li>a {
+    color: #d8e6f3;
+  }
+}
+
+.nav>li>a:focus,
+.nav>li>a:hover,
+.nav .open>a,
+.nav .open>a:focus,
+.nav .open>a:hover,
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover {
+  background-color: #8f93a7;
+  color: white;
+}
+
+.navbar a:hover {
+  color: #FFDE17;
+}​

@@ -4,6 +4,8 @@
   <title>ChemoConnections</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <link href='https://fonts.googleapis.com/css?family=Oxygen:400,700,300' rel='stylesheet' type='text/css'>
+  <link href="css/photos.css" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -12,32 +14,32 @@
 
 <% if user_signed_in? %>
 
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-  <a href="/photos">Photos</a>
-  <a href="/stories">Stories</a>
-  <a href="/events">Events</a>
-  <a href="/pages/cheer_up">Cheer Up!</a>
-  <a href="/pages/about">About Us</a>
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-      <button type="button" class="btn btn-primary navbar-btn"><a href="/photos">Photos</a></button>
-      <button type="button" class="btn btn-primary navbar-btn"><a href="/stories">Stories</a></button>
-      <button type="button" class="btn btn-primary navbar-btn"><a href="/events">Events</a></button>
-      <button type="button" class="btn btn-primary navbar-btn"><a href="/pages/cheer_up">Cheer Up!</a></button>
-      <button type="button" class="btn btn-primary navbar-btn"><a href="/pages/about">About Us</a></button>
-
-    </div>
-  </div>
-</nav>
 
 
+      <!-- Welome, <strong><%= current_user.email %></strong>. -->
+
+      <div class='navbar navbar-static-top navheight'>
+      <div class='container' role='navigation'>
+        <div class='navbar-header'>
+          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+            <span class='sr-only'>Toggle navigation</span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+            <span class='icon-bar'></span>
+          </button>
+        </div>
+          <ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
+                <li><a href='/pages/cheer_up'>Cheer Up!</a></li>
+                <li><a href='/events'>Events</a></li>
+                <li><a href='/photos'>Stories</a></li>
+                <li><a href='/stories'>Support</a></li>
+                <li><a href='/pages/about'>About</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
 <% else %>
   <!-- <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %> -->
@@ -52,6 +54,50 @@
 
 
 <%= yield %>
+
+<div class='footer'>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-sm-4 col-xs-6'>
+        <h4>Who We Are</h4>
+        <a href='http://wyncode.co'>Wyncode Students</a>
+        <p><a href='#'>More About Us <i class='glyphicon glyphicon-arrow-right'></i></a></p>
+      </div>
+​
+      <div class='col-sm-2 col-xs-6'>
+        <h4>Links</h4>
+        <ul class='list-unstyled'>
+          <li><a href='#'>Cheer Up</a></li>
+          <li><a href='#'>Support</a></li>
+          <li><a href='#'>Connect</a></li>
+        </ul>
+      </div>
+​
+      <div class='clearfix visible-xs'></div>
+​
+      <div class='col-sm-2 col-xs-6'>
+        <h4>Social Connections</h4>
+        <ul class='list-unstyled'>
+          <li><a href='#'>Pintrest</a></li>
+          <li><a href='#'>Twitter</a></li>
+          <li><a href='#'>Facebook</a></li>
+          <li><a href='#'>Instagram</a></li>
+        </ul>
+      </div>
+​
+      <div class='col-sm-4 col-xs-6'>
+        <h4>Contact Us</h4>
+        <ul class='list-unstyled'>
+          <li><i class='glyphicon glyphicon-globe'></i> Fort Lauderdale, FL</li>
+          <li><i class='glyphicon glyphicon-envelope'></i> <a href='mailto:info@chemoconnections.co'>info@chemoconnections.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 </body>
 </html>
