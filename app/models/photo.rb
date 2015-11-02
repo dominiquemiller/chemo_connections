@@ -3,5 +3,6 @@ class Photo < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   validates_associated :comments
   validates :picture, presence: true
+  accepts_nested_attributes_for :comments
 
 end
