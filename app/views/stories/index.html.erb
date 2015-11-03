@@ -1,22 +1,27 @@
 
 
 <h1 class="text-center">Finding support thru Connections</h1>
-<h3 class="text-center"><%= link_to 'New Post / Reply', new_story_path %></h3>
+<h3><%= link_to 'New Post / Reply', new_story_path %></h3>
 
 
 
+<div class="row text-center">
 
+<div class="container support-table">
+  <table class="table table-hover">
 
-<table class="table table-hover text-center">
+    <tbody>
+      <% @stories.each do |story| %>
+        <tr>
+          <td><h4><%= story.title %></h4></td>
+          <td><h4><small><%= story.description %></small></h4></td>
+          <td><h4><%= link_to 'Show', story %></h4></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-  <tbody>
-    <% @stories.each do |story| %>
-      <tr>
-        <td><h4><%= story.title %></h4></td>
-        <td><h4><small><%= story.description %></small></h4></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <br>
 
-<br>
+  </div>
+</div>

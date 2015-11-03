@@ -9,21 +9,21 @@
   <%= @story.description %>
 </p>
 
-<h2>Reviews</h2>
+<h2>Comments</h2>
 <% @story.reviews.each do |review| %>
   <p>
-    <strong>Reviewer:</strong>
+    <strong>Commentor:</strong>
     <%= review.reviewer %>
   </p>
 
   <p>
-    <strong>Review: </strong>
+    <strong>Comment: </strong>
     <%= review.body %>
   </p>
-<% end %>
+<% end %> -->
 
 
-<h2>Add a review:</h2>
+<h2>Add a Comment:</h2>
 <%= form_for([@story, @story.reviews.build]) do |f| %>
 
   <p>

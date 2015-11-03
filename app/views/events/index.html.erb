@@ -3,8 +3,9 @@
   <h1 class="text-center">Upcoming Events</h1>
 </div>
 
-<h4><%= link_to 'New Event', new_event_path %></h4>
-
+<h3><%= link_to 'New Event', new_event_path %></h3>
+<div class="row events-margin">
+<div class="container">
 <table class="table">
   <thead>
     <tr>
@@ -21,11 +22,13 @@
         <td><%= event.date %></td>
         <td><%= event.name %></td>
         <td><%= event.description %></td>
-        <td><%= link_to 'More Info', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <td><h4><%= link_to 'More Info', event %></h4></td>
+        <td><h4><%= link_to 'Edit', edit_event_path(event) %></h4></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+</div>
+</div>
