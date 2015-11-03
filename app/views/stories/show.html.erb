@@ -25,6 +25,7 @@
 
 <h2>Add a review:</h2>
 <%= form_for([@story, @story.reviews.build]) do |f| %>
+
   <p>
     <%= f.label :reviewer %><br>
     <%= f.text_field :reviewer %>
