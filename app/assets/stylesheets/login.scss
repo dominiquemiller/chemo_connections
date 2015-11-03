@@ -1,13 +1,58 @@
+.logo {
+  // position:absolute;
+  margin-top: 10em;
+  margin-left: 2.5em;
+}
+
+.logo img {
+  width: 26.5em;
+  height: auto;
+
+}
 .login {
-  background-image: url("../assets/login.jpg");
+  background-image: url("../assets/daisy.jpg");
   width: 100%;
-  height: 768px;
-  position: relative;
+  height: 969px;
+  float:left;
   background-repeat: no-repeat;
   background-size: cover;
+  text-align:center;
 }
 
 .login_form {
-  margin-left: 150px;
-  margin-top: 300px;
+  margin-left: 10px;
+  margin-top: 4em;
+  text-align: center;
 }
+
+.field {
+  font-size: 1.3em;
+  opacity: 1.0;
+}
+
+.container {
+  margin-left: 3em;
+}
+
+/* User sign in and sign forms. */
+.border-form-div {
+  max-width: 300px;
+  padding: 19px 29px 29px;
+  margin: 0 5px 2px;
+  background-color: transparent;
+}
+
+.border-form-div .form-signin-heading,
+.border-form-div .checkbox {
+  margin-bottom: 10px;
+}
+
+.border-form-div input[type="text"],
+.border-form-div input[type="email"],
+.border-form-div input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
+/* User sign in and sign forms. */
