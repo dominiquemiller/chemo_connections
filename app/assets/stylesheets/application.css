@@ -65,4 +65,9 @@
 
 .navbar a:hover {
   color: #FFDE17;
-}​
+}
+
+.logo_nav {
+  margin-left: -30px;
+
+}
