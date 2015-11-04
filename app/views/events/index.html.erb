@@ -3,6 +3,18 @@
   <h1 class="text-center">Upcoming Events</h1>
 </div>
 
+<div class="row">
+        <div class="container">
+          <div class="col-md-3">
+            <form>
+              <legend>Search by city</legend>
+                <input id="search" type="text" class="form-control" value="<%= params[:keyword] %>" name="keyword" placeholder="keyword">
+            </form>
+          </div>
+        </div>
+      </div>
+
+
 <h3><%= link_to 'New Event', new_event_path %></h3>
 <div class="row events-margin">
 <div class="container">

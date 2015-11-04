@@ -1,24 +1,24 @@
 
 <p>
-  <strong>Title:</strong>
-  <%= @story.title %>
+<h3><strong>Title:</strong></h3>
+<h3><%= @story.title %></h3>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @story.description %>
+<h3><strong>Description:</strong></h3>
+<h3><%= @story.description %></h3>
 </p>
 
 <h2>Comments</h2>
 <% @story.reviews.each do |review| %>
   <p>
-    <strong>Commentor:</strong>
-    <%= review.reviewer %>
+    <h3><strong>Commentor:</strong></h3>
+  <h3><%= review.reviewer %></h3>
   </p>
 
   <p>
-    <strong>Comment: </strong>
-    <%= review.body %>
+    <h3><strong>Comment: </strong></h3>
+      <h3><%= review.body %></h3>
   </p>
 <% end %> -->
 
