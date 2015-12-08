@@ -7,20 +7,20 @@
 
 <div class="row text-center">
 
-<div class="container support-table">
-  <table class="table table-hover">
+  <div class="container support-table">
+    <table class="table table-hover">
 
-    <tbody>
-      <% @stories.each do |story| %>
-        <tr>
-          <td><h4><%= story.title %></h4></td>
-          <td><h4><small><%= story.description %></small></h4></td>
-          <td><h4><%= link_to 'Show', story %></h4></td>
-          <!-- <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+      <tbody>
+        <% @stories.each do |story| %>
+          <tr>
+            <td><h4><%= story.title %></h4></td>
+            <td><h4><small><%= story.description %></small></h4></td>
+            <td><h4><%= link_to 'Show', story %></h4></td>
+            <!-- <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
   <br>
 

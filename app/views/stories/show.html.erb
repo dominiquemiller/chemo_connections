@@ -20,10 +20,11 @@
     <h3><strong>Comment: </strong></h3>
       <h3><%= review.body %></h3>
   </p>
-<% end %> -->
+<% end %>
 
 
 <h2>Add a Comment:</h2>
+
 <%= form_for([@story, @story.reviews.build]) do |f| %>
 
   <p>

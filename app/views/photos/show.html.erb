@@ -6,16 +6,16 @@
 
 <div class="container">
  <div class="row">
-  <div class="col-md-4">
-      <h2><small><%= @photo.description %><small></h2>
-  </div>
-  <div class="col-md-2">
-  </div>
-  <div class="col-md-6">
-    <p>
-      <%= image_tag(@photo.picture_url, :width => 600) if @photo.picture.present? %>
-    </p>
-  </div>
+    <div class="col-md-4">
+        <h2><small><%= @photo.description %><small></h2>
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-6">
+      <p>
+        <%= image_tag(@photo.picture_url, :width => 600) if @photo.picture.present? %>
+      </p>
+    </div>
   </div>
 </div>
 
@@ -24,12 +24,13 @@
     <h2 class="text-center">Comments</h2>
   </div>
 </div>
-<div class="container text-center">
-<% @photo.comments.each do |comment| %>
 
-    <h3><%= comment.commenter %> :<small><%= comment.body %></small></h4>
-      
-<% end %>
+<div class="container text-center">
+  <% @photo.comments.each do |comment| %>
+
+      <h3><%= comment.commenter %> :<small><%= comment.body %></small></h4>
+
+  <% end %>
 </div>
 
 <div class="container">
